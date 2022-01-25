@@ -3,7 +3,9 @@ import { Column } from 'rbx';
 import '../../styles/notes.scss';
 import { push as Menu } from 'react-burger-menu';
 import List from '../notes/list';
+import Editor from './editor';
 import NoteService from '../../services/notes';
+
 function Notes(props) {
   const [notes, setNotes] = useState([]);
   const [current_note, setCurrentNote] = useState({
@@ -54,6 +56,11 @@ function Notes(props) {
           customBurgerIcon={false}
           customCrossIcon={false}
         >
+          <Column.Group>
+            <Column size={10} offset={1}>
+              Search...
+            </Column>
+          </Column.Group>
           <List
             notes={notes}
             selectNote={selectNote}
@@ -64,7 +71,7 @@ function Notes(props) {
         </Menu>
 
         <Column size={12} className="notes-editor" id="notes-editor">
-          Editor...
+          <Editor note={current_note} />
         </Column>
       </div>
     </Fragment>
