@@ -9,13 +9,14 @@ import { faList } from '@fortawesome/free-solid-svg-icons';
 
 function HeaderLogged(props) {
   const [redirectToHome, setRedirectToHome] = useState(false);
+  const [user, setUser] = useState(localStorage.getItem('user'));
 
   const logOut = async () => {
     await UserService.logout();
     setRedirectToHome(true);
   };
 
-  if (redirectToHome == true) return <Redirect to={{ pathname: '/' }} />;
+  if (redirectToHome === true) return <Redirect to={{ pathname: '/' }} />;
 
   return (
     <Navbar color="custom-purple" className="navbar-logged">
@@ -23,13 +24,39 @@ function HeaderLogged(props) {
         <Column.Group>
           <Column size="11" offset="1">
             <Link to="/notes">
-              <img src={LogoImage} />
+              <img src={LogoImage} alt="Logo" />
             </Link>
           </Column>
         </Column.Group>
+        <Navbar.Burger
+          className="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbar-menu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </Navbar.Burger>
       </Navbar.Brand>
 
       <Navbar.Menu>
+        <Navbar.Segment
+          as="div"
+          className="navbar-item navbar-start"
+          align="start"
+        >
+          <Navbar.Item as="div">
+            <Button
+              className="open-button"
+              color="white"
+              outlined
+              onClick={() => props.setIsOpen(true)}
+            >
+              <FontAwesomeIcon icon={faList} />
+            </Button>
+          </Navbar.Item>
+        </Navbar.Segment>
         <Navbar.Segment
           as="div"
           className="navbar-item navbar-end"
@@ -39,7 +66,7 @@ function HeaderLogged(props) {
             <Dropdown>
               <Dropdown.Trigger>
                 <Button className="button" color="white" outlined>
-                  <span>Leonardo ▼</span>
+                  <span>{JSON.parse(user)['name']} ▼</span>
                 </Button>
               </Dropdown.Trigger>
               <Dropdown.Menu>

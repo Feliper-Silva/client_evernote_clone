@@ -17,7 +17,7 @@ const Login = () => (
                 <Section>
                   <Column.Group centered>
                     <Column size={12}>
-                      <img src={LogoImage} />
+                      <img src={LogoImage} alt="Logo" />
                     </Column>
                   </Column.Group>
 
