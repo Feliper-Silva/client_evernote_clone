@@ -33,6 +33,9 @@ function ListNotes(props) {
             active={item === props.current_note}
           >
             <Title size={6} subtitle spaced={false}>
+              {item.title.replace(/(<([^>]+)>)/gi, '').substring(0, 15)}
+            </Title>
+            <Title size={6} subtitle spaced={false}>
               {item.body.replace(/(<([^>]+)>)/gi, '').substring(0, 30)}
             </Title>
 
