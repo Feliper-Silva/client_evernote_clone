@@ -1,46 +1,52 @@
 import React, { Fragment } from 'react';
-import Header from '../../../components/header';
-import { Column, Section, Title, Container, Card } from 'rbx';
-import LogoImage from '../../../assets/images/logo.png';
-import '../../../styles/auth.scss';
-import LoginForm from '../../../components/auth/login_form';
+import { Column, Section, Title, Container, Card, Button } from 'rbx';
+import '../../../styles/users.scss';
+import HeaderLogged from '../../../components/header_logged';
+import UsersEditForm from '../../../components/users/user_edit_form';
+import UsersEditFormPassword from '../../../components/users/user_edit_password_form';
+import UsersDelete from '../../../components/users/user_delete';
 
-const UserEdit = () => {
-  return (
-    <Fragment>
-      <Header />
-      <Section size="medium" className="auth">
-        <Container>
-          <Column.Group centered>
-            <Column size={3}>
-              <Card>
-                <Card.Content>
-                  <Section>
-                    <Column.Group centered>
-                      <Column size={12}>
-                        <img src={LogoImage} alt="Logo" />
-                      </Column>
-                    </Column.Group>
+const UserEditScreen = () => (
+  <Fragment>
+    <HeaderLogged />
+    <Section size="medium" className="users">
+      <Container>
+        <Column.Group centered className="users-edit">
+          <Column size={4}>
+            <Title size={5} className="has-text-grey has-text-left">
+              Informações Pessoais
+            </Title>
 
-                    <Column.Group>
-                      <Column size={12}>
-                        <Title
-                          size={6}
-                          className="has-text-grey has-text-centered"
-                        >
-                          Your notes on the cloud
-                        </Title>
-                      </Column>
-                    </Column.Group>
-                  </Section>
-                  <LoginForm />
-                </Card.Content>
-              </Card>
-            </Column>
-          </Column.Group>
-        </Container>
-      </Section>
-    </Fragment>
-  );
-};
-export default UserEdit;
+            <Card>
+              <Card.Content>
+                 <UsersEditForm />
+              </Card.Content>
+            </Card>
+          </Column>
+        </Column.Group>
+
+        <Column.Group centered className="users-edit">
+          <Column size={4}>
+            <Title size={5} className="has-text-grey has-text-left">
+              Password
+            </Title>
+
+            <Card>
+              <Card.Content>
+                <UsersEditFormPassword />
+              </Card.Content>
+            </Card>
+          </Column>
+        </Column.Group>
+
+        <Column.Group centered>
+          <Column size={4} className="has-text-right">
+            <UsersDelete />
+          </Column>
+        </Column.Group>
+      </Container>
+    </Section>
+  </Fragment>
+);
+
+export default UserEditScreen;

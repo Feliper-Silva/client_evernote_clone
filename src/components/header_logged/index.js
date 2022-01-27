@@ -9,13 +9,14 @@ import { faList } from '@fortawesome/free-solid-svg-icons';
 
 function HeaderLogged(props) {
   const [redirectToHome, setRedirectToHome] = useState(false);
+  const [user, setUser] = useState(localStorage.getItem('user'));
 
   const logOut = async () => {
     await UserService.logout();
     setRedirectToHome(true);
   };
 
-  if (redirectToHome == true) return <Redirect to={{ pathname: '/' }} />;
+  if (redirectToHome === true) return <Redirect to={{ pathname: '/' }} />;
 
   return (
     <Navbar color="custom-purple" className="navbar-logged">
@@ -23,7 +24,7 @@ function HeaderLogged(props) {
         <Column.Group>
           <Column size="11" offset="1">
             <Link to="/notes">
-              <img src={LogoImage} />
+              <img src={LogoImage} alt="Logo" />
             </Link>
           </Column>
         </Column.Group>
@@ -65,7 +66,7 @@ function HeaderLogged(props) {
             <Dropdown>
               <Dropdown.Trigger>
                 <Button className="button" color="white" outlined>
-                  <span>Leonardo ▼</span>
+                  <span>{JSON.parse(user)['name']} ▼</span>
                 </Button>
               </Dropdown.Trigger>
               <Dropdown.Menu>
