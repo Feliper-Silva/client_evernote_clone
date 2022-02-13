@@ -30,7 +30,7 @@ $ yarn start
 ```
 O app estará disponível no seu browser pelo endereço http://localhost:3000.
 
-Lembrando que se rodar o [Back-end](https://github.com/Feliper-Silva/javascript_note_api) junto com o Front-end
+Lembrando que se rodar o [Back-end](https://github.com/Feliper-Silva/javascript_note_api) junto com o [Front-end](https://github.com/Feliper-Silva/client_evernote_clone)
 
 ```bash
 # Inicie na porta :3001 o back-end
