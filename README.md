@@ -34,4 +34,4 @@ O app estará disponível no seu browser pelo endereço http://localhost:3000.
 Lembrando que será necessário criar uma conta no Firebase e um projeto para disponibilizar um Realtime Database.
 
 ### 📝 License
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/Feliper-Silva/letmeask/blob/master/LICENSE.md) para mais detalhes.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/Feliper-Silva/client_evernote_clone/blob/master/LICENSE.md) para mais detalhes.
