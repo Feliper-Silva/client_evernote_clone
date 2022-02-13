@@ -30,7 +30,15 @@ $ yarn start
 ```
 O app estará disponível no seu browser pelo endereço http://localhost:3000.
 
-Lembrando que será necessário criar uma conta no Firebase e um projeto para disponibilizar um Realtime Database.
+Lembrando que se rodar o [Back-end](https://github.com/Feliper-Silva/javascript_note_api) junto com o Front-end
+
+```bash
+# Inicie na porta :3001 o back-end
+# usei o nodemon no desenvolvimento:
+
+ $ nodemon PORT:3001
+
+```
 
 ### 📝 License
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/Feliper-Silva/client_evernote_clone/blob/master/LICENSE.md) para mais detalhes.
