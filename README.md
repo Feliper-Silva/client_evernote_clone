@@ -13,7 +13,6 @@ Clone Evernote é ideal para todos que precise fazer anotações!
 
 - [ReactJs](https://reactjs.org)
 - [Sass](https://sass-lang.com/)
-- [MongoDB](https://www.mongodb.com/)
 
 ###  🚀 Como executar:
 clone o projeto é entre na pasta do mesmo:
